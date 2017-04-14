@@ -13,9 +13,10 @@
     
     
     <style>
-        .col-md-3 {
-            height:100%;
+        .full-height {
+            height: 100%;
         }
+
         #col1 {
             background-color: red;
         }
@@ -38,12 +39,12 @@
     
     <ui-view></ui-view>
     
-    <div class="container">
-    <div class="row">
-        <div id="col1" class="col-md-3"><a ui-sref="profile">Profile</a></div>
-        <div id="col2" class="col-md-3">col2</div>
-        <div id="col3" class="col-md-3">col3</div>
-        <div id="col4" class="col-md-3">col4</div>
+    <div class="container full-height">
+    <div class="row full-height">
+        <div id="col1" class="col-md-3 full-height"><a ui-sref="profile">Profile</a></div>
+        <div id="col2" class="col-md-3 full-height">col2</div>
+        <div id="col3" class="col-md-3 full-height">col3</div>
+        <div id="col4" class="col-md-3 full-height">col4</div>
     </div>
     </div>
 
