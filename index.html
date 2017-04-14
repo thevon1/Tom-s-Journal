@@ -22,7 +22,7 @@
         }
         #col3 {
             background-color: black;
-        }
+            }
         #col4 {
             background-color: blue;
         }
@@ -57,8 +57,9 @@
     
     <script>
     var myApp = angular.module('myApp', ['ui.router']);
-        myApp.config(function($stateProvider) {
-
+        myApp.config(function($locationProvider, $stateProvider) {
+        $locationProvider.html5Mode(true)
+        
   var profileState = {
     name: 'profile',
     url: '/profile',
