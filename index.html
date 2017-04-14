@@ -33,10 +33,12 @@
 <body>
 
     <h1>Hello World</h1>
-
+    
+    <ui-view></ui-view>
+    
     <div class="container">
     <div class="row">
-        <div id="col1" class="col-md-3">col1</div>
+        <div id="col1" class="col-md-3"><a ui-sref="profile">Profile</a></div>
         <div id="col2" class="col-md-3">col2</div>
         <div id="col3" class="col-md-3">col3</div>
         <div id="col4" class="col-md-3">col4</div>
@@ -55,7 +57,18 @@
     
     <script>
     var myApp = angular.module('myApp', ['ui.router']);
+        myApp.config(function($stateProvider) {
+
+  var profileState = {
+    name: 'profile',
+    url: '/profile',
+    templateUrl: 'views/profile.html'
+  }
+  $stateProvider.state(profileState);
+ 
+});
     </script>
+    
     
 </body>
 </html>
