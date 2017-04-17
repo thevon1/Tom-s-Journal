@@ -59,6 +59,17 @@
     <span>{{textInput}}</span>
     
     
+    <!--
+    <div ng-controller="theButtonControl">
+    <h4>Here is a button</h4>
+    <pre>{{singleModel}}</pre>
+    <button type="button" class="btn btn-primary" ng-model="singleModel" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+        Clickums
+    </button>
+
+</div>
+    -->
+    
                 <!-- angular link -->
     <script 
         src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js">
@@ -68,44 +79,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js">
     </script>
     
-                <!-- bootstrap link -->
+                <!-- bootstrap link 
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js">
     </script>
-
+                    -->
  
-    <div ng-controller="ButtonsCtrl" class="ng-scope">
-    <h4>Button Modal</h4>
-    <pre class="ng-binding">0</pre>
-    <button type="button" class="btn btn-primary ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched active" 
-            ng-model="singleModel" uib-btn-checkbox="" btn-checkbox-true="1" btn-checkbox-false="0" style="">
-        Click
-    </button>
-
    
-                
+         <!--                           
     <script>
-        angular.module('ui.bootstrap', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
-        angular.module('ui.bootstrap').controller('ButtonsCtrl', function ($scope) {
-        $scope.singleModel = 1;
+        angular.module('ui.bootstrap').controller('theButtonControl', function ($scope) {
+  $scope.singleModel = 1;
 
-        $scope.checkResults = [];
+  $scope.checkResults = [];
 
-        $scope.$watchCollection('checkModel', function () {
-            $scope.checkResults = [];
-            angular.forEach($scope.checkModel, function (value, key) {
-            if (value) {
-                $scope.checkResults.push(key);
-            }
-            });
-        });
-        });
-    </script>
-                                    
-                                    
-                                    
-  
+  $scope.$watchCollection('checkModel', function () {
+    $scope.checkResults = [];
+    angular.forEach($scope.checkModel, function (value, key) {
+      if (value) {
+        $scope.checkResults.push(key);
+      }
+    });
+  });
+});
+</script>
     
+         
+        -->
+        
+        
     <script>
     var myApp = angular.module('myApp', ['ui.router']);
         myApp.config(function($locationProvider, $stateProvider) {
