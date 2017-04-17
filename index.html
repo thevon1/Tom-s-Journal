@@ -16,9 +16,7 @@
         .full-height {
             height: 100%;
         }
-
         #col1 {
-
             background-color: red;
         }
         #col2 {
@@ -42,24 +40,59 @@
     
     <div class="container full-height">
     <div class="row full-height">
-        <div id="col1" class="col-md-3 full-height"><a ui-sref="profile">Profile</a></div>
-        <div id="col2" class="col-md-3 full-height"><a ui-sref="editEntry">Edit Entry</a></div>
+        <div id="col1" class="col-md-3 full-height">col1</div>
+        <div id="col2" class="col-md-3 full-height">col2</div>
         <div id="col3" class="col-md-3 full-height">col3</div>
         <div id="col4" class="col-md-3 full-height">col4</div>
     </div>
-    </div>
+
     <ul>
+        <li><a ui-sref="profile">Profile</a></li>
+        <li><a ui-sref="editEntry">Edit Entry</a></li>
         <li><a ui-sref="entryList">Entry List</a></li>
         <li><a ui-sref="home">Home</a></li>
         <li><a ui-sref="labels">Labels</a></li>
-    </ul>    
+    </ul>   
+        
+        
     <input ng-model="textInput">
     <span>{{textInput}}</span>
     
+    
+                <!-- angular link -->
     <script 
         src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js">
     </script>
     
+    
+                <!-- button enabled modal -->
+    <script>
+    angular.module('ui.bootstrap.demo').controller('ButtonsCtrl', function ($scope) {
+  $scope.singleModel = 1;
+
+  $scope.radioModel = 'Middle';
+
+  $scope.checkModel = {
+    left: false,
+    middle: true,
+    right: false
+  };
+
+  $scope.checkResults = [];
+
+  $scope.$watchCollection('checkModel', function () {
+    $scope.checkResults = [];
+    angular.forEach($scope.checkModel, function (value, key) {
+      if (value) {
+        $scope.checkResults.push(key);
+      }
+    });
+  });
+});
+    </script>
+    
+    
+                <!-- ui router link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js">
     </script>
     
