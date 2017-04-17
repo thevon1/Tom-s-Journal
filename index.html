@@ -58,7 +58,14 @@
     <input ng-model="textInput">
     <span>{{textInput}}</span>
     
-    
+    <div ng-controller="ButtonsCtrl">
+    <h4>The Button!</h4>
+    <pre>{{singleModel}}</pre>
+    <button type="button" class="btn btn-primary" ng-model="singleModel" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+        Clickums
+    </button>
+
+    </div>
 
     
                 <!-- angular link -->
