@@ -59,30 +59,34 @@
     <span>{{textInput}}</span>
     
     
-                   <!-- BUTTON -->
+                <!-- BUTTON -->
     <div>
-    <button type="button" class="btn btn-default" ng-click="$ctrl.open()">Click for Modal</button>
+    <button type="button" class="btn btn-default" ng-click="buttonCtrl.open()">Click for Modal</button>
     </div>
-        <!-- modal enabled from button -->
-    <div ng-controller="buttonCtrl as $ctrl" class="modalPopUp">
+                
+                
+                <!-- modal enabled from button -->
+    <div ng-controller="buttonCtrl" class="modalPopUp">
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
             <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
         </div>
         <div class="modal-body" id="modal-body">
             <ul>
-                <li ng-repeat="item in $ctrl.items">
-                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+                <li ng-repeat="item in buttonCtrl.items">
+                    <a href="#" ng-click="$event.preventDefault(); buttonCtrl.selected.item = item">{{ item }}</a>
                 </li>
             </ul>
-            Selected: <b>{{ $ctrl.selected.item }}</b>
+            Selected: <b>{{ buttonCtrl.selected.item }}</b>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+            <button class="btn btn-primary" type="button" ng-click="buttonCtrl.ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="buttonCtrl.cancel()">Cancel</button>
         </div>
     </script>
-        
+    
+    
+    
 
     
                 <!-- angular link -->
@@ -94,18 +98,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js">
     </script>
     
-                
+               
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js">
     </script>
-                                  
-                <!-- bootstrap link 
+                   
+                    <!-- bootstrap link 
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
-        -->
        
- 
-        
-        
+        -->
+    
+    
     <script>
     var myApp = angular.module('myApp', ['ui.router']);
         myApp.config(function($locationProvider, $stateProvider) {
@@ -147,61 +150,62 @@
     $stateProvider.state(labelsState);
             
     });
-        
-     <!-- button controller -->
+    
+    
+    <!-- button controller -->
     myApp.controller('buttonCtrl', function ($uibModal, $log, $document) {
-  var $ctrl = this;
-  $ctrl.items = ['item1', 'item2', 'item3'];
+  var buttonCtrl = this;
+  buttonCtrl.items = ['item1', 'item2', 'item3'];
 
-  $ctrl.animationsEnabled = true;
+  buttonCtrl.animationsEnabled = true;
 
-  $ctrl.open = function (size, parentSelector) {
+  buttonCtrl.open = function (size, parentSelector) {
     var parentElem = parentSelector ? 
       angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
     var modalInstance = $uibModal.open({
-      animation: $ctrl.animationsEnabled,
+      animation: buttonCtrl.animationsEnabled,
       ariaLabelledBy: 'modal-title',
       ariaDescribedBy: 'modal-body',
       templateUrl: 'myModalContent.html',
       controller: 'ModalInstanceCtrl',
-      controllerAs: '$ctrl',
+      controllerAs: 'buttonCtrl',
       size: size,
       appendTo: parentElem,
       resolve: {
         items: function () {
-          return $ctrl.items;
+          return buttonCtrl.items;
         }
       }
     });
 
     modalInstance.result.then(function (selectedItem) {
-      $ctrl.selected = selectedItem;
+      buttonCtrl.selected = selectedItem;
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
   };
 
-  $ctrl.openComponentModal = function () {
+  buttonCtrl.openComponentModal = function () {
     var modalInstance = $uibModal.open({
-      animation: $ctrl.animationsEnabled,
+      animation: buttonCtrl.animationsEnabled,
       component: 'modalComponent',
       resolve: {
         items: function () {
-          return $ctrl.items;
+          return buttonCtrl.items;
         }
       }
     });
 
     modalInstance.result.then(function (selectedItem) {
-      $ctrl.selected = selectedItem;
+      buttonCtrl.selected = selectedItem;
     }, function () {
       $log.info('modal-component dismissed at: ' + new Date());
     });
   };
 
-  $ctrl.openMultipleModals = function () {
+  buttonCtrl.openMultipleModals = function () {
     $uibModal.open({
-      animation: $ctrl.animationsEnabled,
+      animation: buttonCtrl.animationsEnabled,
       ariaLabelledBy: 'modal-title-bottom',
       ariaDescribedBy: 'modal-body-bottom',
       templateUrl: 'stackedModal.html',
@@ -212,7 +216,7 @@
     });
 
     $uibModal.open({
-      animation: $ctrl.animationsEnabled,
+      animation: buttonCtrl.animationsEnabled,
       ariaLabelledBy: 'modal-title-top',
       ariaDescribedBy: 'modal-body-top',
       templateUrl: 'stackedModal.html',
@@ -223,11 +227,10 @@
     });
   };
 
-  $ctrl.toggleAnimation = function () {
-    $ctrl.animationsEnabled = !$ctrl.animationsEnabled;
+  buttonCtrl.toggleAnimation = function () {
+    buttonCtrl.animationsEnabled = !buttonCtrl.animationsEnabled;
   };
 });
-    </script>
     </script>
     
     
