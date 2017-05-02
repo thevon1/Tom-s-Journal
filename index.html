@@ -6,35 +6,26 @@
     <title>Hello World</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/Tom-s-Journal/">
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 
     <link rel="stylesheet" 
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    
     
+   <link rel="stylesheet" href="JournalCSS.css">
+        
     
-    <style>
-        .full-height {
-            height: 100%;
-        }
-        #col1 {
-            background-color: red;
-        }
-        #col2 {
-            background-color: green;
-        }
-        #col3 {
-            background-color: black;
-            }
-        #col4 {
-            background-color: blue;
-        }
-    </style>
 </head>
 
 
 <body class="full-height">
-
-    <h1>Hello World</h1>
+    <div class='journal-header'>
+        <div class='logo'>
+            <div class='logo-title'>Journal</div>
+            <div class='logo-subtitle'>Be the gatekeeper of your thoughts.</div>
+        </div>
+    </div>
+    
     
     <ui-view></ui-view>
     
@@ -44,6 +35,7 @@
         <div id="col2" class="col-md-3 full-height">col2</div>
         <div id="col3" class="col-md-3 full-height">col3</div>
         <div id="col4" class="col-md-3 full-height">col4</div>
+    </div>
     </div>
 
     <ul>
@@ -55,39 +47,36 @@
     </ul>   
         
         
-    <input ng-model="textInput">
-    <span>{{textInput}}</span>
-    
-    
-                <!-- BUTTON -->
-    <div>
-    <button type="button" class="btn btn-default" ng-click="buttonCtrl.open()">Click for Modal</button>
+    <div>Enter your email: <input ng-model="email" required="string">
+    <span>{{email}}</span>
     </div>
-                
-                
-                <!-- modal enabled from button -->
-    <div ng-controller="buttonCtrl" class="modalPopUp">
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
-        </div>
-        <div class="modal-body" id="modal-body">
-            <ul>
-                <li ng-repeat="item in buttonCtrl.items">
-                    <a href="#" ng-click="$event.preventDefault(); buttonCtrl.selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ buttonCtrl.selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="buttonCtrl.ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="buttonCtrl.cancel()">Cancel</button>
-        </div>
-    </script>
+    <br>
+    <div>Enter your name: 
+    <input ng-model="name">
+    <span>{{name}}</span>
+    </div>
     
     
     
 
+                
+                
+    <!-- modal enabled from button -->
+    <div ng-controller="buttonCtrl" class="modalPopUp" backdrop="false">
+        <button ng-click="openModal()">Open modal without backdrop</button>
+    </div>
+        
+    
+    
+    <div ng-controller="buttonCtrl" class="modalPopUp" backdrop="true">
+        <button ng-click="openModal()">Open modal with backdrop</button>
+    </div>
+    
+    <toms-element-greeting prefix="hey">  </toms-element-greeting>
+    
+    
+    
+   
     
                 <!-- angular link -->
     <script 
@@ -100,8 +89,11 @@
     
                
     <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.6.0/ui-bootstrap-tpls.min.js">
+        src="ui-bootstrap-tpls-2.5.0.min.js">
     </script>
+    
+<!--    <script src="TomsFrameWork.js">
+    </script>-->
                    
                     <!-- bootstrap link 
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
@@ -109,55 +101,12 @@
         -->
     
     
-    <script>
-    var myApp = angular.module('myApp', ['ui.router']);
-        myApp.config(function($locationProvider, $stateProvider) {
-        $locationProvider.html5Mode(true)
-        
-    var profileState = {
-    name: 'profile',
-    url: '/profile',
-    templateUrl: 'views/profile.html'
-    }
-    $stateProvider.state(profileState);
-  
-    var editEntryState = {
-    name: 'editEntry',
-    url: '/editEntry',
-    templateUrl: 'views/editEntry.html'
-    }
-    $stateProvider.state(editEntryState);
-            
-    var entryListState = {
-    name: 'entryList',
-    url: '/entryList',
-    templateUrl: 'views/entryList.html'
-    }
-    $stateProvider.state(entryListState);        
-    
-    var homeState = {
-    name: 'home',
-    url: '/home',
-    templateUrl: 'views/home.html'
-    }
-    $stateProvider.state(homeState);            
-    
-    var labelsState = {
-    name: 'labels',
-    url: '/labels',
-    templateUrl: 'views/labels.html'
-    }
-    $stateProvider.state(labelsState);
-            
-    });
+    <script src="app.js"></script>
+    <script src="javaScriptPractice.js"></script>
     
     
-        <!-- button controller *******NEED UI BOOTSTRAP AS A DEPENDENCY -->
-    myApp.controller('buttonCtrl', function () {
-  
-    })
-    </script>
-    
-    
+    <footer style="text-align:center">
+        Copyright © 2016 by Kogo Software, LLC. All Rights Reserved.
+    </footer>
 </body>
 </html>
