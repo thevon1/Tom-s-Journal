@@ -40,26 +40,31 @@ var labelsState = {
     });
     
     
-    // button controller *******NEED UI BOOTSTRAP AS A DEPENDENCY
-myApp.controller('buttonCtrl', function ($scope, myMessage, timeService, $uibModal) {
+    // button controller 
+myApp.controller('buttonCtrl', function ($scope, $uibModal, $attrs) {
         
-        $scope.myMessage = myMessage;
+        console.dir($attrs);
+
         $scope.openModal = function(){
-            $uibModal.open({template:"foo"})
+            $uibModal.open({
+                templateUrl:'modalContent.html',      //modalContent.html file to spice up the modal
+                backdrop: $attrs.backdrop === "true"})
         }
         $scope.setMyMessage = function(){
             $scope.myMessage = timeService.currentTime()
         }
     })
-myApp.factory("myMessage", function(){
-    return "Hello!";
-})
-
-myApp.service("timeService", function Time(){
-    this.currentTime = function(){
-        return (new Date()).toString()
-    }
-})
     
+////myApp.factory("myMessage", function(){
+////    return "Hello!";
+//})
+// add my message as dependancy on .controller to use
+
+
+//myApp.service("timeService", function Time(){
+//    this.currentTime = function(){
+//        return (new Date()).toString()
+//    }
+//})
     
     
