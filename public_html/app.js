@@ -1,4 +1,5 @@
 var myApp = angular.module('myApp', ['ui.router', 'ui.bootstrap']);
+        
         myApp.config(function($locationProvider, $stateProvider) {
         $locationProvider.html5Mode(true)
         
@@ -41,7 +42,9 @@ var labelsState = {
     
     
     // button controller 
-myApp.controller('buttonCtrl', function ($scope, $uibModal, $attrs) {
+
+myApp.controller('buttonCtrl', function ($scope, $uibModal, $attrs, timeService) {
+
         
         console.dir($attrs);
 
@@ -50,21 +53,33 @@ myApp.controller('buttonCtrl', function ($scope, $uibModal, $attrs) {
                 templateUrl:'modalContent.html',      //modalContent.html file to spice up the modal
                 backdrop: $attrs.backdrop === "true"})
         }
+        $scope.openSecondModal = function(){
+            $uibModal.open({
+                templateUrl:'modalContent.html',      //modalContent.html file to spice up the modal
+                backdrop: $attrs.backdrop === "true",
+                size: "sm"})
+        }
         $scope.setMyMessage = function(){
             $scope.myMessage = timeService.currentTime()
         }
-    })
+        $scope.modalButton = function(){
+            var uibModalInstance = $uibModal.open();
+        }
+        
+    }
     
-////myApp.factory("myMessage", function(){
-////    return "Hello!";
+);
+    
+myApp.service("timeService", function Time(){
+    this.currentTime = function(){
+        return (new Date()).toString()
+    }
+})
+    
+//myApp.factory("myMessage", function(){
+//    return "Hello!";
 //})
 // add my message as dependancy on .controller to use
 
+    
 
-//myApp.service("timeService", function Time(){
-//    this.currentTime = function(){
-//        return (new Date()).toString()
-//    }
-//})
-    
-    
