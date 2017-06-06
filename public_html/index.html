@@ -17,6 +17,10 @@
 
 <body class="full-height">
     
+    
+    
+    <a onclick="windowObjectReference()">Click for the Calc</a>
+
 <!--
 //  ** append / node  / add item to a list and add another element **   
 
@@ -133,50 +137,7 @@
     
     
     
-    <div class="theCalculator" ng-controller="calcCtrl" id="outsideCalcEdge">
-        <div class="calcButtonsrow" id="1stLine">
-            <div id="answerScreen">
-                <span ng-hide="answer">{{leftOperand}}</span> 
-                <span ng-hide="answer">{{operator}}</span> 
-                <span ng-hide="answer">{{rightOperand}}</span> 
-                <span>{{answer}}</span> 
-                <span>{{clear}}</span>
-            </div>
-        </div>
-        
-        <div class="calcButtonsrow" title="brand" id="brand">
-            <span id="calcBrand">*Basic Calculator*</span><br>
-            <span id="kogoSoftwareLLC">Kogo Software LLC</span>
-        </div>
-        <div class="calcButtonsrow" id="2ndLine">
-            <button id="7" ng-click="setOperand('7')">7</button>
-            <button id="8" ng-click="setOperand('8')">8</button>
-            <button id="9" ng-click="setOperand('9')">9</button>
-            <button id="divideBySign" ng-click="setOperator('/')" class=" operator">/</button>
-        </div>
-        <div class="calcButtonsrow" id="3rdLine">
-            <button id="4" ng-click="setOperand('4')">4</button>
-            <button id="5" ng-click="setOperand('5')">5</button>
-            <button id="6" ng-click="setOperand('6')">6</button>
-            <button id="multiplySign" ng-click="setOperator('*')" class=" operator">*</button>
-        </div>
-        <div class="calcButtonsrow" id="4thLine">
-            <button id="1" ng-click="setOperand('1')">1</button>
-            <button id="2" ng-click="setOperand('2')">2</button>
-            <button id="3" ng-click="setOperand('3')">3</button>
-            <button id="minusSign" ng-click="setOperator('-')" class=" operator">-</button>
-
-        </div>
-        <div class="calcButtonsrow" id="5thLine">
-            <button id="clear" ng-click="setClear('C')">C</button>
-            <button id="0" ng-click="setOperand('0')">0</button>
-            <button id="equalSign" ng-click="getAnswer('=')" 
-                    ng-disabled="!leftOperand || !operator || !rightOperand">=</button>
-            <button id="plusSign" ng-click="setOperator('+')" class=" operator">+</button>
-        </div>
-    </div>
     
-   
     
     
     

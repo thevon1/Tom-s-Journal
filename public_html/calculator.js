@@ -38,3 +38,9 @@ calcApp.controller('calcCtrl', function ($scope) {
     };
 
 });
+
+    var windowProperties = "width=500,height=700,resizable,scrollbars=yes";
+    var windowObjectReference = function openCalc() {
+        window.open("http://localhost/Tom-s-Journal/calculatorHTML.html", "calcWindow", windowProperties);
+    };
+    
