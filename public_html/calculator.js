@@ -32,7 +32,7 @@ calcApp.controller('calcCtrl', function ($scope) {
 
     $scope.getAnswer = function () {
         var result = $scope.leftOperand + $scope.operator + $scope.rightOperand;
-        $scope.answer = "= " + eval(result);
+        $scope.answer = eval(result);
         console.log($scope.answer);
     };
 
