@@ -11,29 +11,26 @@ calcApp.controller('calcCtrl', function ($scope) {
 
         if ($scope.leftOperand === null) {
             $scope.leftOperand = operandEntered;
-            console.log($scope.leftOperand);
         } else if ($scope.operator === null) {
             $scope.leftOperand = $scope.leftOperand + operandEntered;
-            console.log($scope.leftOperand);
         } else if ($scope.rightOperand === null) {
             $scope.rightOperand = operandEntered;
-            console.log($scope.rightOperand);
         } else if ($scope.answer === null) {
             $scope.rightOperand = $scope.rightOperand + operandEntered;
-            console.log($scope.rightOperand);
         }
     };
 
     $scope.setOperator = function (operatorEntered) {
         $scope.operator = operatorEntered;
-        console.log(operatorEntered);
-
     };
 
     $scope.getAnswer = function () {
         var result = $scope.leftOperand + $scope.operator + $scope.rightOperand;
-        $scope.answer = eval(result);
-        console.log($scope.answer);
+        var answer = eval(result);
+        if (answer % 2 !== 0){
+            $scope.answer = answer.toFixed(3);
+        }
+        else {$scope.answer = answer;}
     };
 
     $scope.setClear = function (a) {
