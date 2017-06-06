@@ -41,6 +41,33 @@ calcApp.controller('calcCtrl', function ($scope) {
 
     var windowProperties = "width=500,height=700,resizable,scrollbars=yes";
     var windowObjectReference = function openCalc() {
-        window.open("http://localhost/Tom-s-Journal/calculatorHTML.html", "calcWindow", windowProperties);
-    };
-    
+        window.open("http://127.0.0.1:8080/calculatorHTML.html", "calcWindow", windowProperties);
+};
+
+
+
+
+
+//calcApp.controller('buttonCtrl', function ($scope, $uibModal, $attrs) {
+//
+//        
+//        console.dir($attrs);
+//
+//        $scope.openModal = function(){
+//            $uibModal.open({
+//                templateUrl:'calculatorTemplate.html',      //modalContent.html file to spice up the modal
+//                backdrop: $attrs.backdrop === "true"});
+//        };
+//        $scope.openSecondModal = function(){
+//            $uibModal.open({
+//                templateUrl:'modalContent.html',      //modalContent.html file to spice up the modal
+//                backdrop: $attrs.backdrop === "true",
+//                size: "sm"});
+//        };
+//        $scope.modalButton = function(){
+//            var uibModalInstance = $uibModal.open();
+//        };
+//        
+//    }
+//    
+//);
