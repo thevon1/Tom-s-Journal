@@ -41,7 +41,7 @@ calcApp.controller('calcCtrl', function ($scope) {
 
     var windowProperties = "width=300,height=450,resizable,scrollbars=yes";
     var windowObjectReference = function openCalc() {
-        window.open("http://127.0.0.1:8080/calculatorHTML.html", "calcWindow", windowProperties);
+        window.open("/Tom-s-Journal/calculatorHTML.html", "calcWindow", windowProperties);
 };
 
 
