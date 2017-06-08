@@ -8,32 +8,36 @@ calcApp.controller('calcCtrl', function ($scope) {
 
 
     $scope.setOperand = function (operandEntered) {
-        if ($scope.leftOperand === "" && $scope.operator === ""){
-            $scope.leftOperand = operandEntered;
+        if ($scope.operator){
+            $scope.rightOperand += operandEntered;
         }
-        else {$scope.rightOperand = operandEntered;}
+        else {
+            $scope.leftOperand += operandEntered;
+        };
     };
-
     $scope.setOperator = function (operatorEntered) {
         $scope.operator = operatorEntered;
-        console.log($scope.operator);
     };
 
     $scope.getAnswer = function () {
         var result = $scope.leftOperand + $scope.operator + $scope.rightOperand;
         var answer = eval(result);
         if (answer % 2 !== 0){
-            $scope.answer = answer.toFixed(3);
+            $scope.answer = answer.toFixed(2);
         }
         else {$scope.answer = answer;}
+
+        $scope.leftOperand = $scope.answer;
+        $scope.operator = "";
+        $scope.rightOperand = "";
     };
 
     $scope.setClear = function (a) {
         $scope.clear = location.reload();
     };
 
-});
 
+});
     var windowProperties = "width=255,height=367,menubar=yes,location=no,resizable=no,scrollbars=no";
     var windowObjectReference = function openCalc() {
         window.open("/Tom-s-Journal/calculatorHTML.html", "calcWindow", windowProperties);

@@ -7,10 +7,10 @@
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-   
     
-   <link rel="stylesheet" href="JournalCSS.css">
-        
+    
+    <link rel="stylesheet" href="JournalCSS.css">
+    
     
 </head>
 
@@ -19,205 +19,55 @@
     
     
     
-<div class="theCalculator" ng-controller="calcCtrl" id="outsideCalcEdge">
-    <div class="calcButtonsrow" id="1stLine">
-        <div id="answerScreen">
-            <span ng-hide="answer">{{leftOperand}}</span> 
-            <span ng-hide="answer">{{operator}}</span> 
-            <span ng-hide="answer">{{rightOperand}}</span> 
-            <span>{{answer}}</span> 
-            <span>{{clear}}</span>
+    <div class="theCalculator" ng-controller="calcCtrl" id="outsideCalcEdge">
+        <div class="calcButtonsrow" id="1stLine">
+            <div id="answerScreen">
+                <span ng-hide="answer">{{leftOperand}}</span> 
+                <span ng-hide="answer">{{operator}}</span> 
+                <span ng-hide="answer">{{rightOperand}}</span> 
+                <span>{{answer}}</span> 
+                <span>{{clear}}</span>
+            </div>
+        </div>
+
+        <div class="calcButtonsrow" title="brand" id="brand">
+            <span id="calcBrand">*Basic Calculator*</span><br>
+            <span id="kogoSoftwareLLC">Kogo Software LLC</span>
+        </div>
+        <div class="calcButtonsrow" id="2ndLine">
+            <button class="number" id="7" ng-click="setOperand('7')">7</button>
+            <button class="number" id="8" ng-click="setOperand('8')">8</button>
+            <button class="number" id="9" ng-click="setOperand('9')">9</button>
+            <button id="divideBySign" ng-click="setOperator('/')" class=" operator">/</button>
+        </div>
+        <div class="calcButtonsrow" id="3rdLine">
+            <button class="number" id="4" ng-click="setOperand('4')">4</button>
+            <button class="number" id="5" ng-click="setOperand('5')">5</button>
+            <button class="number" id="6" ng-click="setOperand('6')">6</button>
+            <button id="multiplySign" ng-click="setOperator('*')" class=" operator">*</button>
+        </div>
+        <div class="calcButtonsrow" id="4thLine">
+            <button class="number" id="1" ng-click="setOperand('1')">1</button>
+            <button class="number" id="2" ng-click="setOperand('2')">2</button>
+            <button class="number" id="3" ng-click="setOperand('3')">3</button>
+            <button id="minusSign" ng-click="setOperator('-')" class=" operator">-</button>
+
+        </div>
+        <div class="calcButtonsrow" id="5thLine">
+            <button id="clear" ng-click="setClear('C')">C</button>
+            <button class="number" id="0" ng-click="setOperand('0')">0</button>
+            <button id="equalSign" ng-click="getAnswer('=')" 
+            ng-disabled="!leftOperand || !operator || !rightOperand">=</button>
+            <button id="plusSign" ng-click="setOperator('+')" class=" operator">+</button>
         </div>
     </div>
 
-    <div class="calcButtonsrow" title="brand" id="brand">
-        <span id="calcBrand">*Basic Calculator*</span><br>
-        <span id="kogoSoftwareLLC">Kogo Software LLC</span>
-    </div>
-    <div class="calcButtonsrow" id="2ndLine">
-        <button class="number" id="7" ng-click="setOperand('7')">7</button>
-        <button class="number" id="8" ng-click="setOperand('8')">8</button>
-        <button class="number" id="9" ng-click="setOperand('9')">9</button>
-        <button id="divideBySign" ng-click="setOperator('/')" class=" operator">/</button>
-    </div>
-    <div class="calcButtonsrow" id="3rdLine">
-        <button class="number" id="4" ng-click="setOperand('4')">4</button>
-        <button class="number" id="5" ng-click="setOperand('5')">5</button>
-        <button class="number" id="6" ng-click="setOperand('6')">6</button>
-        <button id="multiplySign" ng-click="setOperator('*')" class=" operator">*</button>
-    </div>
-    <div class="calcButtonsrow" id="4thLine">
-        <button class="number" id="1" ng-click="setOperand('1')">1</button>
-        <button class="number" id="2" ng-click="setOperand('2')">2</button>
-        <button class="number" id="3" ng-click="setOperand('3')">3</button>
-        <button id="minusSign" ng-click="setOperator('-')" class=" operator">-</button>
-
-    </div>
-    <div class="calcButtonsrow" id="5thLine">
-        <button id="clear" ng-click="setClear('C')">C</button>
-        <button class="number" id="0" ng-click="setOperand('0')">0</button>
-        <button id="equalSign" ng-click="getAnswer('=')" 
-                ng-disabled="!leftOperand || !operator || !rightOperand">=</button>
-        <button id="plusSign" ng-click="setOperator('+')" class=" operator">+</button>
-    </div>
-</div>
-
-<!--
-//  ** append / node  / add item to a list and add another element **   
-
-
-    <table id="outside">
-        <tr><td id="t1">one</td></tr>
-        <tr><td id="t2">two</td></tr>
-    </table>
-
-    <input type="text" id="myText" value="three">
-    <button onclick="myFunction()">Press - appendChild Function</button>
-
-    <br><br><br><br>
- -->
-        
- 
- 
- 
-<!-- 
-    Enter a month. Make sure the first letter <strong>is</strong> capitalized.<br><br>
-    <div>
-        <input type="text" id="monthInputBox" value="July">
-        <button type="button" onclick="findNumbDays()">Enter, then click</button>
-    </div>
-
-    <div>
-        <div id="outputDiv"></div>          
-    </div>
- -->
-        
- 
-
-<!--
-    <div class='journal-header'>
-        <div class='logo'>
-            <div class='logo-title'>Journal</div>
-            <div class='logo-subtitle'>Be the gatekeeper of your thoughts.</div>
-        </div>
-    </div>
     
-    
-    <ui-view></ui-view>
-    
-    <div class="container full-height">
-    <div class="row full-height">
-        <div id="col1" class="col-md-3 full-height">col1</div>
-        <div id="col2" class="col-md-3 full-height">col2</div>
-        <div id="col3" class="col-md-3 full-height">col3</div>
-        <div id="col4" class="col-md-3 full-height">col4</div>
-    </div>
-    </div>
-
-    <ul>
-        <li><a ui-sref="profile">Profile</a></li>
-        <li><a ui-sref="editEntry">Edit Entry</a></li>
-        <li><a ui-sref="entryList">Entry List</a></li>
-        <li><a ui-sref="home">Home</a></li>
-        <li><a ui-sref="labels">Labels</a></li>
-    </ul>   
-        
-        
-    <div>Enter your email: <input ng-model="email" required="string">
-    <span>{{email}}</span>
-    </div>
-    
-    <div>Enter your name: 
-    <input ng-model="name">
-    <span>{{name}}</span>
-    </div>
-    -->
-    
-    
-
-                
-                
-
-<!--    <div ng-controller="buttonCtrl" class="modalPopUp" id="modalCalcButt" backdrop="false">
-        <button ng-click="openModal()">Open modal without backdrop</button>
-    </div>
-        
-    <br>
-    
-    <div ng-controller="buttonCtrl" ng-class="modalPopUp" backdrop="true">
-        <button ng-click="openSecondModal()">Open modal with OK and Cancel Buttons</button>
-    </div>    -->
-    
-    <!--
-
-    <div ng-controller="buttonCtrl">
-         <button ng-click="setMyMessage()"> Time, set my message</button>
-        {{myMessage}}
-    </div>
-
--->
-    
-    
-<!--    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
-        </div>
-        <div class="modal-body" id="modal-body">
-          <ul>
-                <li ng-repeat="item in buttonCtrl.items">
-                    <a href="#" ng-click="$event.preventDefault(); buttonCtrl.selected.item = item">{{ item }}</a>
-                </li>
-            </ul>
-            Selected: <b>{{ buttonCtrl.selected.item }}</b>
-        </div>
-        <div class="modal-footer">
-            <button class="modalPopUp" type="button" ng-click="buttonCtrl.ok()">OK</button>
-            <button class="modalPopUp" type="button" ng-click="buttonCtrl.cancel()">Cancel</button>
-        </div>
-            </script>-->
-
-    
-    
-    
-    
-    
-    
-    
-<!--     <toms-element-greeting prefix="hey">  </toms-element-greeting> -->
-    
-    
-    
-   
-    
-                <!-- angular link -->
     <script 
-        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
-    </script>
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+</script>
 
-                <!-- ui router link -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js">
-    </script>
-    
-               
-    <script
-        src="ui-bootstrap-tpls-2.5.0.min.js">
-    </script>
-    
-<!--    <script src="app.js"></script>-->
-    <script src="javaScriptPractice.js"></script>
-    <script src="calculator.js"></script>
-    
-    
-<!--    <script src="TomsFrameWork.js">
-    </script>-->
-                   
-                    <!-- bootstrap link 
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
-       
-        -->
+<script src="calculator.js"></script>
 
-<!--     <footer style="text-align:center">
-        Copyright © 2016 by Kogo Software, LLC. All Rights Reserved.
-    </footer> -->
 </body>
 </html>
