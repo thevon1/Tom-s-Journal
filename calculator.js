@@ -7,11 +7,11 @@ calcApp.controller('calcCtrl', function ($scope) {
     $scope.answer = "";
 
 
-        $scope.setOperand = function (operandEntered) {
-            if ($scope.leftOperand === "" && $scope.operator === ""){
-                $scope.leftOperand = operandEntered;
-            }
-            else {$scope.rightOperand = operandEntered;}
+    $scope.setOperand = function (operandEntered) {
+        if ($scope.leftOperand === "" && $scope.operator === ""){
+            $scope.leftOperand = operandEntered;
+        }
+        else {$scope.rightOperand = operandEntered;}
     };
 
     $scope.setOperator = function (operatorEntered) {
