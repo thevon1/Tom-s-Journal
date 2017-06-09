@@ -21,7 +21,10 @@ calcApp.controller('calcCtrl', function ($scope) {
 
     $scope.getAnswer = function () {
         var result = $scope.leftOperand + $scope.operator + $scope.rightOperand;
-        var answer = eval(result);
+        if ($scope.leftOperand === $scope.rightOperand){
+            answer = 0;
+        }
+        else {var answer = eval(result);};
 
         $scope.leftOperand = answer;
         $scope.operator = "";
