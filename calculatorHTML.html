@@ -7,24 +7,24 @@
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
+
     
     <link rel="stylesheet" href="JournalCSS.css">
-    
+
     
 </head>
 
 
 <body class="full-height overflow-hidden" ng-cloak>
-    
-    
-    
+
+
+
     <div class="theCalculator" ng-controller="calcCtrl" id="outsideCalcEdge">
         <div class="calcButtonsrow" id="1stLine">
             <div id="answerScreen">
-                <span ng-hide="answer">{{leftOperand}}</span> 
-                <span ng-hide="answer">{{operator}}</span> 
-                <span ng-hide="answer">{{rightOperand}}</span> 
+                <span>{{leftOperand}}</span> 
+                <span>{{operator}}</span> 
+                <span>{{rightOperand}}</span> 
                 <span>{{answer}}</span> 
                 <span>{{clear}}</span>
             </div>

@@ -22,12 +22,8 @@ calcApp.controller('calcCtrl', function ($scope) {
     $scope.getAnswer = function () {
         var result = $scope.leftOperand + $scope.operator + $scope.rightOperand;
         var answer = eval(result);
-        if (answer % 2 !== 0){
-            $scope.answer = answer.toFixed(2);
-        }
-        else {$scope.answer = answer;}
 
-        $scope.leftOperand = $scope.answer;
+        $scope.leftOperand = answer;
         $scope.operator = "";
         $scope.rightOperand = "";
     };
