@@ -21,14 +21,17 @@ calcApp.controller('calcCtrl', function ($scope) {
 
     $scope.getAnswer = function () {
         var result = $scope.leftOperand + $scope.operator + $scope.rightOperand;
-        var answer = eval(result).toFixed(2).toString();
+        var answer = parseFloat(eval(result).toFixed(2));
         $scope.leftOperand = answer;
         $scope.operator = "";
         $scope.rightOperand = "";
     };
 
     $scope.setClear = function (a) {
-        $scope.clear = location.reload();
+        $scope.leftOperand = "";
+        $scope.operator = "";
+        $scope.rightOperand = "";
+        $scope.answer = "";
     };
 
     $scope.setDecimal = function (decimalEntered) {
