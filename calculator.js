@@ -21,11 +21,7 @@ calcApp.controller('calcCtrl', function ($scope) {
 
     $scope.getAnswer = function () {
         var result = $scope.leftOperand + $scope.operator + $scope.rightOperand;
-        if ($scope.leftOperand === $scope.rightOperand){
-            answer = 0;
-        }
-        else {var answer = eval(result);};
-
+        var answer = eval(result).toFixed(2).toString();
         $scope.leftOperand = answer;
         $scope.operator = "";
         $scope.rightOperand = "";
@@ -35,11 +31,18 @@ calcApp.controller('calcCtrl', function ($scope) {
         $scope.clear = location.reload();
     };
 
+    $scope.setDecimal = function (decimalEntered) {
+        if ($scope.operator){
+            $scope.rightOperand += decimalEntered
+        }
+        else {$scope.leftOperand += decimalEntered;}
+    }
+
 
 });
-    var windowProperties = "width=255,height=367,menubar=yes,location=no,resizable=no,scrollbars=no";
-    var windowObjectReference = function openCalc() {
-        window.open("/Tom-s-Journal/calculatorHTML.html", "calcWindow", windowProperties);
+    var window1Properties = "width=250,height=369";
+    var calcWindow1 = function openCalc() {
+        window.open("/Tom-s-Journal/calculatorHTML.html", "calcWindow", window1Properties);
 };
 
 

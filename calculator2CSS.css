@@ -1,0 +1,12 @@
+.flexcontainer {
+	display: flex;	
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+.number {
+
+    flex-grow: 0; // default!
+	flex-basis: 32%;
+	flex-shrink:0;
+  flex: 0 0 32%;

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     
-    <link rel="stylesheet" href="calculatorCSS.css">
+    <link rel="stylesheet" href="calculator2CSS.css">
 
     
 </head>
@@ -19,21 +19,19 @@
 
 
 
-    <div class="theCalculator flexcontainer" ng-controller="calcCtrl" id="outsideCalcEdge">
-        <div class="calcButtonsrow" id="1stLine">
+    <div class="theCalculator container" ng-controller="calcCtrl" id="outsideCalcEdge">
+        <!-- <div class="calcButtonsrow" id="1stLine">
             <div id="answerScreen">
                 <span>{{leftOperand}}</span> 
                 <span>{{operator}}</span> 
-                <span>{{rightOperand}}</span>
-                <span>{{decimal}}</span> 
+                <span>{{rightOperand}}</span> 
                 <span>{{clear}}</span>
             </div>
-        </div>
+        </div> -->
 
-        <div class="calcButtonsrow" title="clear" id="brand">
+        <div class="calcButtonsrow" title="brand" id="brand">
             <span id="calcBrand">*Basic Calculator*</span><br>
             <span id="kogoSoftwareLLC">Kogo Software LLC</span>
-            <button id="clear" ng-click="setClear('C')">C</button>
         </div>
         <div class="calcButtonsrow" id="2ndLine">
             <button class="number" id="7" ng-click="setOperand('7')">7</button>
@@ -52,22 +50,22 @@
             <button class="number" id="2" ng-click="setOperand('2')">2</button>
             <button class="number" id="3" ng-click="setOperand('3')">3</button>
             <button id="minusSign" ng-click="setOperator('-')" class=" operator">-</button>
-
         </div>
         <div class="calcButtonsrow" id="5thLine">
-            <button id="decimal" ng-click="setDecimal('.')">.</button>
+            <button id="clear" ng-click="setClear('C')">C</button>
             <button class="number" id="0" ng-click="setOperand('0')">0</button>
             <button id="equalSign" ng-click="getAnswer('=')" 
             ng-disabled="!leftOperand || !operator || !rightOperand">=</button>
             <button id="plusSign" ng-click="setOperator('+')" class=" operator">+</button>
         </div>
+    </div>
 
     
     <script 
     src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
-</script>
+    </script>
 
-<script src="calculator.js"></script>
+    <script src="calculator2.js"></script>
 
 </body>
 </html>
