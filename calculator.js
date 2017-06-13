@@ -36,15 +36,17 @@ calcApp.controller('calcCtrl', function ($scope) {
 
     $scope.setDecimal = function (decimalEntered) {
         if ($scope.operator){
-            $scope.rightOperand += decimalEntered
+            $scope.rightOperand += decimalEntered;
         }
         else {$scope.leftOperand += decimalEntered;}
-    }
+        }
 
-
+        if (string.indexOf('.') > -1){
+            decimalEntered = "";
+        }
 });
-    var window1Properties = "width=250,height=369";
     var calcWindow1 = function openCalc() {
+        var window1Properties = "width=250,height=369";
         window.open("/Tom-s-Journal/calculatorHTML.html", "calcWindow", window1Properties);
 };
 

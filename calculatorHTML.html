@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en-us" ng-app="calcApp" class="full-height">
 <head>
@@ -15,7 +16,7 @@
 </head>
 
 
-<body class="full-height overflow-hidden" ng-cloak>
+<body class="full-height overflow-hidden flex-container" ng-cloak>
 
 
 
@@ -58,7 +59,7 @@
             <button id="decimal" ng-click="setDecimal('.')">.</button>
             <button class="number" id="0" ng-click="setOperand('0')">0</button>
             <button id="equalSign" ng-click="getAnswer('=')" 
-            ng-disabled="!leftOperand || !operator || !rightOperand">=</button>
+            ng-disabled="!leftOperand && !operator || !rightOperand">=</button>
             <button id="plusSign" ng-click="setOperator('+')" class=" operator">+</button>
         </div>
 
