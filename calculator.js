@@ -14,6 +14,9 @@ calcApp.controller('calcCtrl', function ($scope) {
         else {
             $scope.leftOperand += operandEntered;
         };
+        
+
+        
     };
 
     $scope.setOperator = function (operatorEntered) {
