@@ -15,6 +15,7 @@ calcApp.controller('calcCtrl', function ($scope) {
             $scope.leftOperand += operandEntered;
         };
     };
+
     $scope.setOperator = function (operatorEntered) {
         $scope.operator = operatorEntered;
     };
@@ -39,11 +40,9 @@ calcApp.controller('calcCtrl', function ($scope) {
             $scope.rightOperand += decimalEntered;
         }
         else {$scope.leftOperand += decimalEntered;}
-        }
 
-        if (string.indexOf('.') > -1){
-            decimalEntered = "";
-        }
+    };
+
 });
     var calcWindow1 = function openCalc() {
         var window1Properties = "width=250,height=369";

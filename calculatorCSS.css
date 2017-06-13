@@ -3,36 +3,7 @@
     src: url('./calcFontFiles/digital-7.ttf');
 }
 
-/*
-        .full-height {
-            height: 100%;
-        }
-        #col1 {
-            background-color: red;
-        }
-        #col2 {
-            background-color: green;
-        }
-        #col3 {
-            background-color: black;
-            }
-        #col4 {
-            background-color: blue;
-            }*/
-
-
-.journal-header{
-    background-image: url("./Journalpictures/waterBackground.jpg");
-    height: 350px;
-
-}
-
-
-
-
-/*        ****************calculator CSS************/
-
-#answerScreen {
+/*#answerScreen {
     background-color: lightgray;
     border-style: inset;
     border-color: white;
@@ -50,6 +21,8 @@ button {
     font-weight: bold;
     height: 50px;
     width: 50px;
+    padding:10px;
+    margin: 3px;
 }
 
 
@@ -164,7 +137,7 @@ button {
 
 .theCalculator {
     background-color: lightskyblue;
-}
+}*/
 
 [disabled] {
     color: gray !important;
@@ -176,22 +149,81 @@ button {
 }
 
 
-.container {
-    display: flex;  
-    flex-direction: column;
-    flex-wrap: nowrap;
+#brand {
+    text-align: center;
 }
 
-.number {
+.calcButtonsrow {
+    display: flex;  
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+#calcBrand {
+    font-weight: bold;
+}
 
-    flex-grow: 0; // default!
-    flex-basis: 32%;
-    flex-shrink:0;
-  flex: 0 0 32%;
+
+.calcAnswerRow {
+    background-color: lightgray;
+    border-width: 5px;
+    border-color: white;
+    border-style: inset;
+    height: 35px;
+    font-family: 'sickCalculatorFont';
+    font-weight: bold;
+    padding-left: 5px
+}
+
+.calcInfo { 
+    flex-direction: column;
+    display: flex;  
+    flex: 1;
+    justify-content: center;
+}
+
+#clear {
+    background-color: #B24D86;
+}
+#clear:hover {
+    background-color: red;
+}
+
+#equalSign {
+    color: #FA6800;
+    font-weight: bold;
+}
+.number:hover {
+    background-color: #FF5644;
+    font-weight: bold;
+
+}
+.operator {
+    background-color: #0E2F5C;
+    color: white;
+}
+.operator:hover {
+    background-color: #4CAF50;
+}
 
 
+#kogoSoftwareLLC {
+    color: grey;
+    font-weight: bold;
+    font-size: 10px
+}
 
-  html, body, div {
-    height: 100%;
+button{
+    background-color: lightgray;
+    border-style: ridge;
+    border-radius: 10px;
+    flex: 1;
+    margin: 2px;
+    text-align: center;
+    
+}
+
+html, body, div {
     width: 100%;
+    background-color: lightskyblue;
   }
