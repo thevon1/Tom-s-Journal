@@ -33,17 +33,12 @@ button {
 }
 
 .calcAnswerRow {
-    display: flex;
-    flex: 1;
     background-color: lightgray;
-    flex-direction: row;
     border-width: 5px;
     border-color: darkgray;
     border-style: inset;
     font-family: 'sickCalculatorFont';
     font-weight: bold;
-    align-items: center;
-
 }
 
 #calcBrand {
