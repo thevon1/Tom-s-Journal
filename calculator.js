@@ -53,7 +53,7 @@ calcApp.controller('calcCtrl', function ($scope) {
 
 });
     var calcWindow1 = function openCalc() {
-        var window1Properties = "width=261,height=432";
+        var window1Properties = "width=315,height=431";
         window.open("/Tom-s-Journal/calculatorHTML.html", "calcWindow", window1Properties);
 };
 
