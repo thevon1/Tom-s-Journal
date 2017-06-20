@@ -19,24 +19,23 @@
 <body class="full-height overflow-hidden" ng-cloak>
 
 
-
     <div class="theCalculator" ng-controller="calcCtrl" id="outsideCalcEdge">
-
-        <div class="calcAnswerRow" id="1stLine">
-            <span>{{leftOperand}}</span> 
-            <span>{{operator}}</span> 
-            <span>{{rightOperand}}</span>
-            <span>{{decimal}}</span> 
-            <span>{{clear}}</span>
-        </div>
-
-
-        <div class="flex-container theButtons">
-            <div class="calcInfo" id="brand">
-                <span id="calcBrand">*Basic Calculator*</span><br>
-                <span title="Best Company On Earth" id="kogoSoftwareLLC">Kogo Software LLC</span>
-                <button title="Press to Clear" id="clear" ng-click="setClear('C')">C</button>
+            <div class="calcAnswerRow" id="1stLine">
+                <span class="answers">{{leftOperand}}</span> 
+                <span class="answers">{{operator}}</span> 
+                <span class="answers" >{{rightOperand}}</span>
+                <span class="answers">{{decimal}}</span> 
+                <span class="answers">{{clear}}</span>
             </div>
+           
+            <div class="calcInfo" id="brand">
+                <span id="calcBrand">*Basic Calculator*</span>
+                <span title="Best Company On Earth" id="kogoSoftwareLLC">
+                <img src="/Journalpictures/kogoImage.png"</span>
+                <button title="Press to Clear" id="clear" ng-click="setClear('C')">CLEAR</button>
+            </div>
+
+            <div class="calcButtons">
             <div class="calcButtonsrow" id="2ndLine">
                 <button class="number" id="7" ng-click="setOperand('7')">7</button>
                 <button class="number" id="8" ng-click="setOperand('8')">8</button>
@@ -66,6 +65,12 @@
         </div>
     </div>
     
+
+
+
+
+
+
     <script 
     src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
 </script>

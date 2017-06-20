@@ -3,194 +3,89 @@
     src: url('./calcFontFiles/digital-7.ttf');
 }
 
-/*#answerScreen {
-    background-color: lightgray;
-    border-style: inset;
-    border-color: white;
-    border-width:5px;
-    font-family: 'sickCalculatorFont';
-    font-size: 25px;
-    font-weight: bold;
-    height: 50px;
-    padding-left: 3px;
-    width: 215px;
-}
-
-button {
-    border-radius: 10px;
-    font-weight: bold;
-    height: 50px;
-    width: 50px;
-    padding:10px;
-    margin: 3px;
-}
 
 
-
-#brand {
-    color: #000;
-    font-weight: bold;
-    font-size: 11px;
-    text-align: left;
-}
-
-.calcButtonsrow {
-    padding: 5px;
-}
-
-#calcButtonsBox {
-    border-style: groove;
-}
-
-#clear {
-    background-color: #FFAAAA;
-    font-size: 10px;
-    height: 20px;
-    width: 30px;
-    margin-left: 67px;
-}
-
-#clear:hover {
-    background-color: red;
-}
-
-.overflow-hidden {
-    overflow: hidden;
-}
-#divideBySign {
-    border-radius: 10px;
-    font-weight: bold;
-    height: 50px;
-    width: 50px;
-}
-#divideBySign:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-#equalSign{
-    color: #FA6800;
-}
-
-#kogoSoftwareLLC {
-    color: grey;
-    font-weight: bold;
-}
-
-#minusSign {
-    border-radius: 10px;
-    font-weight: bold;
-    height: 50px;
-    width: 50px;
-}
-#minusSign:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-#modalCalcButt {
-    height: 150px !important;
-    width: 150px !important;
-}
-
-#multiplySign {
-    border-radius: 10px;
-    font-weight: bold;
-    height: 50px;
-    width: 50px;
-}
-#multiplySign:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-
-.number:hover {
-    background-color: yellow;
-    color: black;
-}
-
-#outsideCalcEdge {
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 3px;
-    margin-bottom: 50px;
-    padding: 10px;
-    width: 250px;
-}
-
-.operator {
-    color: white;
-    background-color: #0E2F5C;
-}
-
-#plusSign {
-    border-radius: 10px;
-    font-weight: bold;
-    height: 50px;
-    width: 50px;
-}
-#plusSign:hover {
-    background-color: #4CAF50;
-    color: white;
-}
-
-.theCalculator {
-    background-color: lightskyblue;
-}*/
 
 [disabled] {
     color: gray !important;
-    /*            the id of #equalSign takes precedence over [disabled], !important over rides that*/
+    the id of #equalSign takes precedence over [disabled], !important over rides that
 }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-    display: none !important;
+html, body {
+    width: 100%;
+    height: 100%;
 }
 
-
-#brand {
-    text-align: center;
-}
-
-.calcButtonsrow {
-    display: flex;  
+body {
+    display: flex;
     flex: 1;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-#calcBrand {
-    font-weight: bold;
 }
 
 
-.calcAnswerRow {
-    background-color: lightgray;
-    border-width: 5px;
-    border-color: white;
-    border-style: inset;
-    height: 35px;
-    font-family: 'sickCalculatorFont';
-    font-weight: bold;
-    padding-left: 5px
-}
 
-.calcInfo { 
-    flex-direction: column;
-    display: flex;  
+
+
+
+button {
+    display: flex;
     flex: 1;
     justify-content: center;
 }
 
-#clear {
-    background-color: #B24D86;
+.calcAnswerRow {
+    display: flex;
+    flex: 1;
+    background-color: lightgray;
+    flex-direction: row;
+    border-width: 5px;
+    border-color: darkgray;
+    border-style: inset;
+    font-family: 'sickCalculatorFont';
+    font-weight: bold;
+    align-items: center;
+
 }
-#clear:hover {
+
+#calcBrand {
+    font-style: italic;
+}
+
+.calcButtons {
+    display: flex;
+    flex: 3;
     background-color: red;
+    flex-direction: column;
+}
+
+.calcButtonsrow {
+    display: flex;
+    flex-direction: : row;
+    flex: 1;
+    justify-content: center;
+}
+
+.calcInfo {
+    display: flex;
+    background-color: lightblue;
+    flex-direction: column;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#clear {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#clear:hover {
+    background-color: #DF95AF;
 }
 
 #decimal:hover {
-    background-color: yellow;  /*#FF5644*/
+    background-color: darkgray;  /*#FF5644*/
     font-weight: bold;
 }
 
@@ -200,36 +95,32 @@ button {
 }
 
 #kogoSoftwareLLC {
-    color: grey;
-    font-weight: bold;
-    font-size: 10px
+    display: flex;
+    flex: 1;
 }
 
 .number:hover {
-    background-color: yellow;  /*#FF5644*/
+    background-color: darkgray;  /*#FF5644*/
     font-weight: bold;
 }
+
 
 .operator {
     background-color: #0E2F5C;
     color: white;
 }
 .operator:hover {
-    background-color: #4CAF50;
+    background-color: lightblue;
 }
 
-
-button{
-    background-color: lightgray;
-    border-style: ridge;
-    border-radius: 10px;
+.theCalculator {
+    display: flex;
     flex: 1;
-    margin: 2px;
-    text-align: center;
-    
+    background-color: blue;
+    flex-direction: column;
 }
 
-html, body, div {
-    width: 100%;
-    background-color: lightskyblue;
-  }
+.answers {
+
+    font-size: 50px;
+}
