@@ -39,6 +39,7 @@ button {
     border-style: inset;
     font-family: 'sickCalculatorFont';
     font-weight: bold;
+    height: 81px;
 }
 
 #calcBrand {
