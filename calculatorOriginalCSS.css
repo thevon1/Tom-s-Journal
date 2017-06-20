@@ -1,0 +1,108 @@
+
+@font-face {
+    font-family: 'sickCalculatorFont';
+    src: url('./calcFontFiles/digital-7.ttf');
+}
+
+[disabled] {
+    color: gray !important;
+                the id of #equalSign takes precedence over [disabled], !important over rides that
+
+
+
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+
+#brand {
+    text-align: center;
+}
+
+.calcButtonsrow {
+    display: flex;  
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+#calcBrand {
+    font-weight: bold;
+}
+
+
+.calcAnswerRow {
+    background-color: lightgray;
+    border-width: 5px;
+    border-color: white;
+    border-style: inset;
+    height: 35px;
+    font-family: 'sickCalculatorFont';
+    font-weight: bold;
+    padding-left: 5px
+}
+
+.calcInfo { 
+    flex-direction: column;
+    display: flex;  
+    flex: 1;
+    justify-content: center;
+}
+
+#clear {
+    background-color: #B24D86;
+}
+#clear:hover {
+    background-color: red;
+}
+
+#decimal:hover {
+    background-color: yellow;  /*#FF5644*/
+    font-weight: bold;
+}
+
+#equalSign {
+    color: #FA6800;
+    font-weight: bold;
+}
+
+#kogoSoftwareLLC {
+    color: grey;
+    font-weight: bold;
+    font-size: 10px
+}
+
+.number:hover {
+    background-color: yellow;  /*#FF5644*/
+    font-weight: bold;
+}
+
+.operator {
+    background-color: #0E2F5C;
+    color: white;
+}
+.operator:hover {
+    background-color: #4CAF50;
+}
+
+
+button{
+    background-color: lightgray;
+    border-style: ridge;
+    border-radius: 10px;
+    flex: 1;
+    margin: 2px;
+    text-align: center;
+    
+}
+
+html, body {
+    width: 100%;
+    background-color: lightskyblue;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
