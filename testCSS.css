@@ -1,26 +1,25 @@
- html, body {
+html, body {
     width: 100%;
- }
-
-body {
-	display: flex;
-	flex-direction: column;
-	background-color: orange;
 }
 
+body {
+    display: flex;
+    flex: 1;
+}
 
 .flexBox {
-	color: black;
-	flex: 1;
-	background-color: white;
 	display: flex;
 	flex-direction: column;
-	align-self: center;
+	flex: 1;
 }
 
 .inside {
 	display: flex;
-	background-color: pink;
+	flex-direction: column;
+}
+
+.murica {
+	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	flex: 1;
 }
